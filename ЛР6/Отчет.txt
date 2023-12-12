@@ -1,0 +1,14 @@
+function TForm1.SetOrientationEncode(const sendcommand, deg: string): string;
+var command,degrees:integer;
+begin
+try
+   degrees:=Integer.Parse(deg);
+   command:=Integer.Parse(sendcommand);
+   Result:=command.ToString+' '+degrees.ToString;
+except on EConvertError do
+begin
+   ShowMessage('Ошибка!!!');
+   Result:='8 0';
+end;
+end;
+end;
